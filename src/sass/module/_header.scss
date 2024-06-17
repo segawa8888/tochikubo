@@ -1,0 +1,85 @@
+@use "global" as *;
+
+.header {
+    position: relative;
+    height:calc(370.55 / 1125 * 100vw);
+    width: 100%;
+    @include mq(md) {
+        height:initial;
+    }
+}
+
+.header::after {
+    content:'';
+    position: absolute;
+    inset: 0;
+    margin:0 auto;
+    width:6px;
+    height:100%;
+    border-left:1px solid $black;
+    border-right:1px solid $black;
+    @include mq(md) {
+        height:200px;
+    }
+}
+
+.header-copyright {
+    text-align: center;
+    font-size: calc(32 / 1125 * 100vw);
+    padding-top: calc(140 / 1125 * 100vw);
+    font-weight: $regular;
+    letter-spacing: 0.025em;
+    @include mq(md) {
+        font-size: rem(12);
+        letter-spacing: 0.05em;
+        line-height: calc(21 / 12);
+        padding-top: rem(82.7);
+        margin-top: initial;
+    }
+}
+
+.header-menu {
+    margin-top: calc(72 / 1125 * 100vw);
+    margin-bottom: calc(70 / 1125 * 100vw);
+    overflow: hidden;
+    @include mq(md) {
+        margin-top: rem(37);
+        margin-bottom:rem(150);
+    }
+}
+
+.header-menu .swiper-slide {
+    text-align: center;
+}
+
+.header-button-next {
+    content: '';
+    width:49vw;
+    height: calc(100 / 1125 * 100vw);
+    position: absolute;
+    top:calc(250 / 1125 * 100vw);
+    right:0;
+    z-index:9999;
+    cursor: pointer;
+    @include mq(md) {
+    top:110px;
+    }
+}
+
+.header-button-prev {
+    content: '';
+    width:49vw;
+    height: calc(100 / 1125 * 100vw);
+    position: absolute;
+    top:calc(250 / 1125 * 100vw);
+    left: 0;
+    cursor: pointer;
+    z-index:9999;
+    @include mq(md) {
+    top:110px;
+        }
+}
+
+.modal-open-body header {
+    display: none;
+}

@@ -1,0 +1,176 @@
+@use "global" as *;
+
+/* ---------------------------- */
+/* --- modal --- */
+/* ---------------------------- */
+
+.modal-open {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    align-items: center;
+}
+
+.modal-open figure {
+  cursor: pointer;
+}
+
+/* モーダル */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100vw;
+  height: 100%;
+  padding-left: calc(40 / 1125 * 100vw);
+  padding-right: calc(40 / 1125 * 100vw);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 1);
+  @include mq(md) {
+    padding-top: initial;
+    padding-left: initial;
+    padding-right: initial;
+    padding:30px;
+  }
+}
+
+/* モーダルがactiveの時 */
+.modal.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index:9999;
+}
+
+/* モーダル背景のオーバーレイ部分 */
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+}
+
+/* モーダルのコンテンツ */
+.modal__content {
+    position: relative;
+    width: 100%;
+    margin-left: calc(40 / 1125 * 100vw);
+    margin-right: calc(40 / 1125 * 100vw);
+}
+.modal_inner {
+    background: #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+/* 閉じるボタン */
+.modal__close-btn {
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    z-index: 20;
+    bottom:calc(-111 / 1125 * 100vw);
+    width: calc(30 / 1125 * 100vw);
+    height: calc(30 / 1125 * 100vw);
+    @include mq(md) {
+      bottom:-60px;
+      width: 1vw;
+      height:initial;
+    }
+}
+.modal__close-btn:hover {
+    opacity: 0.8;
+}
+
+.lineClose img {
+  width: 100%;
+  height: 100%;
+}
+
+.modal-swiper-container .swiper-button-prev {
+  top:initial;
+  bottom:calc(-160 / 1125 * 100vw);
+  left: calc(180 / 1125 * 100vw);
+  @include mq(md) {
+    bottom: -75px;
+    left: 30%;
+  }
+}
+
+.modal-swiper-container .swiper-button-next {
+  top:initial;
+  bottom:calc(-160 / 1125 * 100vw);
+  right: calc(180 / 1125 * 100vw);
+  @include mq(md) {
+    bottom: -75px;
+    right: 30%;
+  }
+}
+
+.modal-swiper-container .swiper-button-next:after {
+  content:'';
+  background-image: url(../images/index/right-angle.png);
+  width:calc(13.62 / 1125 * 100vw);
+  height:calc(28.98 / 1125 * 100vw);
+  background-size: contain;
+  @include mq(md) {
+    width:calc(4.9 / 1280 * 100vw);
+    height:calc(10 / 1280 * 100vw);
+  }
+}
+
+.modal-swiper-container .swiper-button-prev:after {
+  content:'';
+  background-image: url(../images/index/left-angle.png);
+  width:calc(25.79 / 1125 * 100vw);
+  height:calc(28.98 / 1125 * 100vw);
+  background-size: contain;
+  @include mq(md) {
+    width:calc(8.9 / 1280 * 100vw);
+    height:calc(10 / 1280 * 100vw);
+  }
+}
+
+.modal__description {
+  position: absolute;
+  bottom:-50px;
+  left:50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  line-height: calc(21 / 12);
+  bottom:calc(-190 / 1125 * 100vw);
+  font-size: calc(32 / 1125 * 100vw);
+  @include mq(md) {
+    bottom: -100px;
+    font-size: 12px;
+  }
+}
+
+.modalInSlider img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-swiper-container {
+  height: 100%!important;
+}
+
+.modal-open-body {
+  .modalInSlider img {
+    max-height: 123.78vw;
+    @include mq(md) {
+      max-height: initial;
+    }
+  }
+}

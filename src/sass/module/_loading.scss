@@ -1,0 +1,34 @@
+@use "global" as *;
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+//ローダー
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    
+    .loader-slide {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.5);
+        
+        &.open {
+            animation-name: slideOut;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-delay: 1s;
+        }
+    }
+}

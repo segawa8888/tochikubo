@@ -1,0 +1,112 @@
+@use "global" as *;
+
+.friends__container {
+    margin-top: calc(150 / 1125 * 100vw);
+    padding-left: calc(80 / 1125 * 100vw);
+    padding-right: calc(80 / 1125 * 100vw);
+    @include mq(md) {
+        margin-top: rem(37);
+        max-width: rem(960);
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: initial;
+        padding-left: initial;
+    }
+}
+
+.friends__tittle {
+    font-size: calc(32 / 1125 * 100vw);
+    font-weight: $regular;
+    letter-spacing: 0.05em;
+    line-height: calc(56 / 32);
+    text-align: center;
+    @include mq(md) {
+        text-align: left;
+        font-size: rem(12);
+        line-height: calc(21 / 12);
+    }
+}
+
+.friends__area--tittle {
+    margin-top:calc(86 / 1125 * 100vw) ;
+    @include mq(md) {
+        margin-top:rem(42);
+        font-size: rem(24);
+        line-height: calc(42 / 24);
+        margin-bottom: rem(7.4);
+        width: 100%;
+    }
+}
+
+.friends__content {
+    display: flex;
+    justify-content: space-between;
+    gap:20px calc(60 / 1125 * 100vw);
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: calc(56.3 / 1125 * 100vw);
+    @include mq(md) {
+        flex-wrap: wrap;
+        justify-content: initial;
+        margin-top: rem(7.4);
+        gap:0;
+    }
+}
+
+.friends__area {
+    @include mq(md) {
+        display: flex;
+        align-items: baseline;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.friends__area p {
+    font-size: calc(48 / 1125 * 100vw);
+    line-height: calc(57 / 48);
+    font-weight: $regular;
+    letter-spacing: 0.025em;
+    @include mq(md) {
+        font-size: rem(20);
+        line-height: calc(30 / 20);
+
+    }
+}
+
+.friends__wrap {
+    @include mq(md) {
+        display: flex;
+        align-items:baseline;
+        gap:0 rem(179);
+    }
+}
+
+.friends__link {
+    max-width: calc(86.76 / 1125 * 100vw);
+    margin-bottom: rem(5);
+    @include mq(md) {
+        max-width: rem(15);
+    }
+}
+
+.friends__message {
+    margin-top: calc(188 / 1125 * 100vw);
+    font-size: calc(32 / 1125 * 100vw);
+    text-align: center;
+    font-weight: $regular;
+    letter-spacing: 0.05em;
+    line-height: calc(56 / 32);
+    @include mq(md) {
+        margin-top: rem(33.7);
+        font-size: rem(12);
+        line-height: calc(21 / 12);
+        width: 100%;
+        text-align: left;
+    }
+    a {
+        border-bottom: 1px solid #000;
+    }
+}

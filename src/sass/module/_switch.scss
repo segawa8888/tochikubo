@@ -1,0 +1,119 @@
+@use "global" as *;
+
+    .c-radio {
+        display: none;
+    }
+  
+    .btn__multi,
+    .btn__single {
+      cursor: pointer;
+      width:calc(64 / 1125 * 100vw);
+      height:calc(46 / 1125 * 100vw);
+      @include mq(md) {
+        width:rem(16);
+        height:rem(9);
+      }
+      span {
+        display: block;
+        background: #ccc;
+        transition: all .3s ease;
+      }
+    }
+    .btn__multi {
+      position: relative;
+      display: flex;
+      span {
+        display: block;
+        width:calc(19.33 / 1125 * 100vw);
+        height:calc(46 / 1125 * 100vw);
+        @include mq(md) {
+          width: rem(3.25);
+          height:rem(9);
+        }
+      }
+      span:nth-child(n+2) {
+        margin-left: calc(3 / 1125 * 100vw);
+        @include mq(md) {
+          margin-left: rem(1);
+        }
+      }
+    }
+    .btn__single {
+      span {
+        width:calc(64 / 1125 * 100vw);
+        height:calc(46 / 1125 * 100vw);
+        @include mq(md) {
+          width:rem(16);
+          height:rem(9);
+        }
+      }
+    }
+  
+  #multi:checked ~ .switch-control .btn__multi {
+    cursor: default;
+    span {
+      background: #3B4144;
+      &:after {
+        background: #3B4144;
+      }
+    }
+  }
+  
+  #single:checked ~ .switch-control .btn__single {
+    cursor: default;
+    span {
+      background: #3B4144;
+    }
+  }
+  
+  .btn_multi-pc {
+    display: none;
+    @include mq(md) {
+      display: flex;
+    }
+  }
+  
+  .btn_multi-sp {
+    display:flex;
+    @include mq(md) {
+      display: none;
+    }
+  }
+
+  .switch-box {
+    position: relative;
+    margin:0 auto;
+    max-width: 100%;
+    @include mq(md) {
+      max-width: calc(1040 / 1500 * 100vw);
+    }
+    .card figure {
+      transition: 0.4s;
+      margin:0;
+      height:initial;
+      margin-bottom: rem(20);
+      display: inline-block;
+    }
+  }
+
+  .switch-control {
+    display: flex;
+    justify-content: right;
+    gap:0 3px;
+    max-width: 100%;
+    padding-right: calc(40 / 1125 * 100vw);
+    padding-left: calc(40 / 1125 * 100vw);
+    @include mq(md) {
+      max-width: calc(1040 / 1500 * 100vw);
+      margin:0 auto;
+      padding-left: initial;
+      padding-right: initial;
+    }
+    label {
+      z-index:9999;
+    }
+  }
+
+  .modal-open-body .switch-control {
+    display: none;
+}

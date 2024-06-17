@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.index {
+  box-sizing: border-box;
+}
+
+.main-page {
+  margin-top: calc(70 / 1125 * 100vw);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.modal-open-body {
+  .main-page {
+    padding-top: 45%;
+    margin-top: initial;
+    @include mq(md) {
+      padding-top: initial;
+      margin-top: rem(40);
+    }
+  }
+}
+
+.swiper-scrollbar:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  height: 50px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}

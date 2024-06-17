@@ -1,0 +1,84 @@
+@use "global" as *;
+
+.card-container {
+  margin-top: rem(10);
+}
+
+.card {
+    display: flex;
+    flex-wrap :wrap;
+    margin: calc(33 / 1125 * 100vw) auto 0;
+    gap:0 rem(20);
+    align-items: center;
+    transition: 1s;
+    height:auto;
+    @include mq(md) {
+      margin:rem(6) auto 0;
+    }
+      &:before {
+        content: "";
+        display: block;
+      }
+      span {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: block;
+        font-size: 10px;
+        color: #666;
+        letter-spacing: 1px;
+    }
+  }
+
+  .card-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: calc(12 / 1125 * 100vw);
+    max-width: 100%;
+    padding-right: calc(40 / 1125 * 100vw);
+    padding-left: calc(40 / 1125 * 100vw);
+    @include mq(md) {
+      padding-right: initial;
+      padding-left: initial;
+      margin-bottom: rem(6);
+    }
+  }
+  
+  .card-content p {
+    font-size: calc(32 / 1125 * 100vw);
+    line-height: calc(14 / 12);
+    font-weight: $regular;
+    letter-spacing: 0.05em;
+    text-align: right;
+    @include mq(md) {
+      font-size: rem(12);
+    }
+  }
+
+  #single:checked ~ .swiper-container .swiper-wrapper .swiper-slide .card {
+    gap:rem(10) 0;
+    transition: 1s;
+  }
+  
+  #single:checked ~ .swiper-container .swiper-wrapper .swiper-slide  .card .card__item {
+    width: 100%;
+    span {
+      top: 20px;
+      left: 20px;
+      font-size: 16px;
+    }
+  }
+
+  #multi:checked ~ .swiper-container .swiper-wrapper .swiper-slide  .card {
+    margin-bottom:calc(251 / 1125 * 100vw);
+    transition: 1s;
+  }
+
+  #multi:checked ~ .swiper-container .swiper-wrapper .swiper-slide .card figure {
+    width: calc(341 / 1125 * 100vw);
+    @include mq(md) {
+      width: calc(25% - 30px);
+    }
+  }
